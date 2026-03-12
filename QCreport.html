@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; QC HTML report – SingleCellMQC v0.7.1</title>
+<title>3&nbsp; QC HTML report – SingleCellMQC v0.8.0</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -135,7 +135,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">SingleCellMQC v0.7.1</a> 
+      <a href="./">SingleCellMQC v0.8.0</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -163,13 +163,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Inhouse_PBMC.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Inhouse PBMC guided tutorial</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Dataset 1 (PBMC 28K cells) tutorial</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Dataset3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Dataset3 (Large data) guided tutorial (BPCells)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Dataset3 (breast 1.6M cells) tutorial (BPCells used)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -195,19 +195,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#dataset1" id="toc-dataset1" class="nav-link active" data-scroll-target="#dataset1"><span class="header-section-number">3.1</span> Dataset1</a>
-  <ul class="collapse">
+  <ul>
   <li><a href="#load-data" id="toc-load-data" class="nav-link" data-scroll-target="#load-data"><span class="header-section-number">3.1.1</span> Load data</a></li>
   <li><a href="#run-preprocessing-for-single-cell-data-if-no-prior-preprocessing-has-been-performed" id="toc-run-preprocessing-for-single-cell-data-if-no-prior-preprocessing-has-been-performed" class="nav-link" data-scroll-target="#run-preprocessing-for-single-cell-data-if-no-prior-preprocessing-has-been-performed"><span class="header-section-number">3.1.2</span> Run Preprocessing for Single-Cell Data (If no prior preprocessing has been performed)</a></li>
   <li><a href="#generate-qc-html-report" id="toc-generate-qc-html-report" class="nav-link" data-scroll-target="#generate-qc-html-report"><span class="header-section-number">3.1.3</span> Generate QC HTML Report</a></li>
   </ul></li>
   <li><a href="#dataset2" id="toc-dataset2" class="nav-link" data-scroll-target="#dataset2"><span class="header-section-number">3.2</span> Dataset2</a>
-  <ul class="collapse">
+  <ul>
   <li><a href="#load-data-1" id="toc-load-data-1" class="nav-link" data-scroll-target="#load-data-1"><span class="header-section-number">3.2.1</span> Load data</a></li>
   <li><a href="#run-preprocessing-for-single-cell-data-if-no-prior-preprocessing-has-been-performed-1" id="toc-run-preprocessing-for-single-cell-data-if-no-prior-preprocessing-has-been-performed-1" class="nav-link" data-scroll-target="#run-preprocessing-for-single-cell-data-if-no-prior-preprocessing-has-been-performed-1"><span class="header-section-number">3.2.2</span> Run Preprocessing for Single-Cell Data (If no prior preprocessing has been performed)</a></li>
   <li><a href="#generate-qc-html-report-1" id="toc-generate-qc-html-report-1" class="nav-link" data-scroll-target="#generate-qc-html-report-1"><span class="header-section-number">3.2.3</span> Generate QC HTML Report</a></li>
   </ul></li>
   <li><a href="#dataset3" id="toc-dataset3" class="nav-link" data-scroll-target="#dataset3"><span class="header-section-number">3.3</span> Dataset3</a>
-  <ul class="collapse">
+  <ul>
   <li><a href="#load-data-2" id="toc-load-data-2" class="nav-link" data-scroll-target="#load-data-2"><span class="header-section-number">3.3.1</span> Load data</a></li>
   <li><a href="#run-preprocessing-for-single-cell-data-if-no-prior-preprocessing-has-been-performed-2" id="toc-run-preprocessing-for-single-cell-data-if-no-prior-preprocessing-has-been-performed-2" class="nav-link" data-scroll-target="#run-preprocessing-for-single-cell-data-if-no-prior-preprocessing-has-been-performed-2"><span class="header-section-number">3.3.2</span> Run Preprocessing for Single-Cell Data (If no prior preprocessing has been performed)</a></li>
   <li><a href="#generate-qc-html-report-2" id="toc-generate-qc-html-report-2" class="nav-link" data-scroll-target="#generate-qc-html-report-2"><span class="header-section-number">3.3.3</span> Generate QC HTML Report</a></li>
@@ -828,8 +828,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./Dataset3.html" class="pagination-link" aria-label="Dataset3 (Large data) guided tutorial (BPCells)">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Dataset3 (Large data) guided tutorial (BPCells)</span></span>
+      <a href="./Dataset3.html" class="pagination-link" aria-label="Dataset3 (breast 1.6M cells) tutorial (BPCells used)">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Dataset3 (breast 1.6M cells) tutorial (BPCells used)</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
