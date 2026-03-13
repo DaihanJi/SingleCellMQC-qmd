@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>SingleCellMQC v0.8.0</title>
+<title>Tips – SingleCellMQC v0.8.0</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,7 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./Inhouse_PBMC.html" rel="next">
+<link href="./QCreport.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -120,7 +120,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Introduction</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Tips.html">Tips</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -150,7 +150,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
@@ -183,10 +183,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
       </ul>
   </li>
-        <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Appendix</span></span>
-  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Tips.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Tips</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -197,20 +199,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
-  <ul>
-  <li><a href="#singlecellmqc" id="toc-singlecellmqc" class="nav-link" data-scroll-target="#singlecellmqc">SingleCellMQC</a></li>
-  <li><a href="#r-installation" id="toc-r-installation" class="nav-link" data-scroll-target="#r-installation">R Installation</a></li>
-  </ul></li>
+  <li><a href="#progress-updates" id="toc-progress-updates" class="nav-link active" data-scroll-target="#progress-updates">Progress updates</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/WenZhong-Lab/SingleCellMQC/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/WenZhong-Lab/SingleCellMQC/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/WenZhong-Lab/SingleCellMQC/edit/main/Tips.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/WenZhong-Lab/SingleCellMQC/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">SingleCellMQC v0.8.0</h1>
+<h1 class="title">Tips</h1>
 </div>
 
 
@@ -227,55 +225,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="introduction" class="level1 unnumbered">
-<h1 class="unnumbered">Introduction</h1>
-<section id="singlecellmqc" class="level2">
-<h2 class="anchored" data-anchor-id="singlecellmqc">SingleCellMQC</h2>
-<p><img src="./Figure1.png" class="img-fluid"> <img src="./_book/workflow.png" class="img-fluid"></p>
-<p><strong>SingleCellMQC</strong>: A comprehensive quality control workflow for single-cell single omics or multi-omics. The SingleCellMQC workflow consists of four major QC modules: sample-level QC, cell-level QC, feature-level QC, and batch-level QC. All functions within the SingleCellMQC package are built upon the Seurat and BPCells frameworks and are compatiable with commonly used single-cell analysis pipelines. Each QC module can be executed independently, allowing users to perform QC tasks for specific aims. Moreover, interactive HTML reports summarizing QC results can be generated via the ‘RunReport’ function. In addition, the workflow is optimized for large-scale datasets, and all QC tasks can be executed on a standard laptop without requiring high-performance computing.</p>
-</section>
-<section id="r-installation" class="level2">
-<h2 class="anchored" data-anchor-id="r-installation">R Installation</h2>
-<p>Before installation, we recommend installing these dependencies first:</p>
-<ul>
-<li><a href="https://github.com/satijalab/seurat">Seurat</a> (single-cell analysis toolkit)</li>
-<li><a href="https://github.com/bnprks/BPCells">BPCells</a> (memory-efficient single-cell data processing)</li>
-</ul>
-<p><strong>other main packages</strong></p>
+<p><strong>Here are some helpful tips for you to use SingleCellMQC more smoothly.</strong></p>
+<section id="progress-updates" class="level2">
+<h2 class="anchored" data-anchor-id="progress-updates">Progress updates</h2>
+<p>Turning on the global progress update report feature before your analysis is suggested, so that you could keep better track of the whole QC progress. Please note that the progress update feature is currently not supported in Jupyter Notebooks.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>cran_pkgs <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"cutoff"</span>, <span class="st">"data.table"</span>, <span class="st">"dbscan"</span>, <span class="st">"dplyr"</span>, <span class="st">"factoextra"</span>, <span class="st">"ggrepel"</span>, <span class="st">"ggplot2"</span>,</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"ggside"</span>, <span class="st">"htmltools"</span>, <span class="st">"htmlwidgets"</span>, <span class="st">"irr"</span>, <span class="st">"patchwork"</span>, <span class="st">"plotly"</span>, <span class="st">"reactable"</span>,</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"reactablefmtr"</span>, <span class="st">"scales"</span>, <span class="st">"scattermore"</span>, <span class="st">"shadowtext"</span>, <span class="st">"sparkline"</span>, <span class="st">"stringr"</span>,</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"sp"</span>, <span class="st">"UpSetR"</span>, <span class="st">"MASS"</span>, <span class="st">"e1071"</span>, <span class="st">"R.utils"</span>, <span class="st">"rlang"</span>, <span class="st">"rmarkdown"</span>, <span class="st">"uwot"</span>,</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"future.apply"</span>, <span class="st">"progressr"</span>, <span class="st">"future"</span>, <span class="st">"aricode"</span>, <span class="st">"clusterSim"</span>, <span class="st">"fpc"</span>,</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">"RColorBrewer"</span>, <span class="st">"gtools"</span>, <span class="st">"lmerTest"</span>, <span class="st">"Matrix"</span>, <span class="st">"Seurat"</span>, <span class="st">"SeuratObject"</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>cran_missing <span class="ot">&lt;-</span> cran_pkgs[<span class="sc">!</span>cran_pkgs <span class="sc">%in%</span> <span class="fu">rownames</span>(<span class="fu">installed.packages</span>())]</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">length</span>(cran_missing) <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(cran_missing)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>bioc_pkgs <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>   <span class="st">"MatrixGenerics"</span>, <span class="st">"scater"</span>, <span class="st">"scDblFinder"</span>,</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="st">"SingleCellExperiment"</span>, <span class="st">"S4Vectors"</span>, <span class="st">"bluster"</span>, <span class="st">"dreamlet"</span>, <span class="st">"variancePartition"</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>bioc_missing <span class="ot">&lt;-</span> bioc_pkgs[<span class="sc">!</span>bioc_pkgs <span class="sc">%in%</span> <span class="fu">rownames</span>(<span class="fu">installed.packages</span>())]</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">length</span>(bioc_missing) <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  BiocManager<span class="sc">::</span><span class="fu">install</span>(bioc_missing)</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>You can install the development version of <code>SingleCellMQC</code> :</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"pak"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) {</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">"pak"</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pkg_install</span>(<span class="st">"WenZhong-Lab/SingleCellMQC"</span>)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(SingleCellMQC)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(progressr)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">handlers</span>(<span class="at">global =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -698,11 +657,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./QCreport.html" class="pagination-link" aria-label="QC HTML report">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">QC HTML report</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./Inhouse_PBMC.html" class="pagination-link" aria-label="Dataset 1 (PBMC 28K cells) tutorial">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Dataset 1 (PBMC 28K cells) tutorial</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
@@ -710,4 +669,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/WenZhong-Lab/SingleCellMQC/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/WenZhong-Lab/SingleCellMQC/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/WenZhong-Lab/SingleCellMQC/edit/main/Tips.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/WenZhong-Lab/SingleCellMQC/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
